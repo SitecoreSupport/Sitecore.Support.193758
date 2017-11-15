@@ -35,7 +35,7 @@
 <body runat="server" id="Body" class="scWindowBorder1 contentEditor" onmousedown="javascript:scWin.mouseDown(this, event)"
     onmousemove="javascript:scWin.mouseMove(this, event)" onmouseup="javascript:scWin.mouseUp(this, event)">
     <form id="ContentEditorForm" style="overflow: hidden" runat="server">
-        <sc:CodeBeside runat="server" Type="Sitecore.Shell.Applications.ContentManager.ContentEditorForm, Sitecore.Client" />
+        <sc:CodeBeside runat="server" Type="Sitecore.Support.Shell.Applications.ContentManager.ContentEditorForm, Sitecore.Support.193758" />
         <sc:DataContext runat="server" ID="ContentEditorDataContext" />
         <sc:RegisterKey runat="server" KeyCode="120" Click="system:publish" />
         <asp:PlaceHolder ID="scLanguage" runat="server" />

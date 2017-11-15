@@ -24,11 +24,11 @@ namespace Sitecore.Support.Shell.Applications.ContentManager
                 Item item = Client.ContentDatabase.GetItem(fieldInfo.FieldID);
                 if (item != null)
                 {
-                    if (!sortedList.ContainsKey(item.DisplayName))
+                    if (!sortedList.ContainsKey(GetTitle(item)))  
                     {
-                        sortedList.Add(item.DisplayName, item.Key);
+                        sortedList.Add(Sitecore.Globalization.Translate.Text(GetTitle(item)), item.Key);
                     }
-                flag = true;
+                    flag = true;
                 }
             }
             if (flag)
@@ -42,6 +42,15 @@ namespace Sitecore.Support.Shell.Applications.ContentManager
             menu.Add("Remove", "Remove", string.Empty, string.Empty, "javascript:scContent.removeSearchCriteria(\"" + text + "\")", false, string.Empty, MenuItemType.Normal);
             SheerResponse.EnableOutput();
             SheerResponse.ShowPopup(control, "below", menu);
+        }
+        private string GetTitle(Item item)
+        {
+            if (item.Fields["Title"].Value != "")
+
+            {
+                return item.Fields["Title"].Value;
+            }
+            return item.Name;
         }
     }
 }
