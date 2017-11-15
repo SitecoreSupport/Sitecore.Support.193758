@@ -26,7 +26,7 @@ namespace Sitecore.Support.Shell.Applications.ContentManager
                 {
                     if (!sortedList.ContainsKey(GetTitle(item)))  
                     {
-                        sortedList.Add(Sitecore.Globalization.Translate.Text(GetTitle(item)), item.Key);
+                        sortedList.Add(GetTitle(item), item.Key);
                     }
                     flag = true;
                 }
